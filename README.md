@@ -7,11 +7,7 @@
 
 ## 📊 Dashboard Preview
 
-![HR Attrition Dashboard](Screenshots/dashboard-screenshot.png)
-
-<img width="499" height="263" alt="Screenshot 2026-07-01 002737" src="https://github.com/user-attachments/assets/a19b6263-6708-4a36-ab79-a6239204c7c2" />
-
-
+![HR Attrition Dashboard](dashboard.png)
 
 ---
 
