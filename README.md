@@ -1,74 +1,85 @@
-# Employee-Attrition-
-![Python](https://img.shields.io/badge/Python-3.9-green?logo=python)
-![SQL](https://img.shields.io/badge/SQL-Analysis-blue?logo=postgresql)
-![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-yellow?logo=powerbi)
-![GoogleColab](https://img.shields.io/badge/GoogleColab-Notebook-orange?logo=googlecolab)
+# Employee Attrition Prediction
 
-##  Repository Structure
+[![Python](https://img.shields.io/badge/Python-3.9-green?logo=python)](#)
+[![SQL](https://img.shields.io/badge/SQL-Analysis-blue?logo=postgresql)](#)
+[![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-yellow?logo=powerbi)](#)
+[![GoogleColab](https://img.shields.io/badge/GoogleColab-Notebook-orange?logo=googlecolab)](#)
 
-├── WA_Fn-UseC_-HR-Employee-Attrition/           # Original dataset  
-├── EmployeeAttrition/                           # Colab notebook  
-├── HrAnalytics query/                           # SQL queries  
-├── Hr Attrition Dashboard/                      # Power BI dashboard  
-├── Employee Attrition Analysis Report/          # Final report  
-├── HrPredictions/                               # Predicted CSV output  
+## 📊 Dashboard Preview
 
-##  Project Description
+![HR Attrition Dashboard](Screenshots/dashboard-screenshot.png)
 
-This project focuses on analyzing and predicting **employee attrition** using the IBM HR dataset. Attrition is a critical challenge for organizations, leading to increased recruitment costs, reduced productivity, and lower morale. The goal of this project is to uncover the key drivers of employee turnover and build predictive models that help HR teams design effective retention strategies.
+<img width="499" height="263" alt="Screenshot 2026-07-01 002737" src="https://github.com/user-attachments/assets/a19b6263-6708-4a36-ab79-a6239204c7c2" />
 
-The analysis integrates:
-- **SQL** → for descriptive queries and calculating attrition rates by department, job role, and satisfaction levels.  
-- **Power BI** → for interactive dashboards and visual storytelling of attrition trends.  
-- **Python (scikit‑learn, XGBoost, SHAP)** → for predictive modeling and explainability.  
+
 
 ---
 
-## Key Details
+## Project Description
 
-- **Dataset:** IBM HR Employee Attrition (1,470 records, 35 features).  
-- **Target Variable:** Attrition (Yes = 1, No = 0).  
-- **Data Preprocessing:**  
-  - Removed redundant columns (`EmployeeCount`, `EmployeeNumber`, `Over18`, `StandardHours`).  
-  - One‑hot encoded categorical variables (`BusinessTravel`, `Department`, `EducationField`, `JobRole`, `MaritalStatus`).  
-  - Standardized numerical features using `StandardScaler`.  
-  - Train‑test split (80/20).  
+This project analyzes and predicts **employee attrition** using the IBM HR Employee Attrition dataset (1,470 records, 35 features). Attrition drives up recruitment costs, lowers productivity, and hurts morale — the goal here was to identify the strongest predictors of turnover and build a model accurate enough to support real retention decisions.
 
-- **Models Tested:** Logistic Regression, Decision Tree, Random Forest, XGBoost.  
-- **Best Model:** Logistic Regression (Accuracy: 86.5%, ROC‑AUC: 0.808).  
-- **Explainability:** SHAP analysis identified **Overtime, Business Travel, Job Role, Environment Satisfaction, and Years Since Last Promotion** as the strongest predictors of attrition.  
-
-- **Outputs:**  
-  - SQL queries for descriptive analysis.  
-  - Power BI dashboard for visualization.  
-  - Python notebook for predictive modeling.  
-  - **Predicted CSV file** (`results/Predicted_Attrition_Output.csv`) containing:  
-    - `Predicted_Attrition` → 0 = Stay, 1 = Leave  
-    - `Attrition_Probability` → Probability score from the model  
-    - `Prediction` → Human‑readable label ("Stay" or "Leave")  
+The analysis combines:
+- **SQL** — descriptive queries and attrition rate breakdowns by department, job role, and satisfaction level
+- **Power BI** — interactive dashboards visualizing attrition trends
+- **Python (scikit-learn, XGBoost, SHAP)** — predictive modeling and model explainability
 
 ---
 
-##  Insights & Recommendations
+## Key Results
 
-- Employees with **low satisfaction** and **high overtime** are more likely to leave.  
-- **Sales** and **R&D** departments show the highest attrition rates.  
-- **Younger employees** and those with fewer years of service are at greater risk.  
-- Recommendations include improving work‑life balance, structured promotions, employee engagement programs, and reviewing travel policies.  
-
----
-
-##  Limitations
-
-- Dataset is synthetic (IBM sample data).  
-- External market factors not included.  
-- Logistic regression assumes linear relationships.  
+- **Best model: Logistic Regression — 86.5% accuracy, 0.808 ROC-AUC**, outperforming Decision Tree, Random Forest, and XGBoost on this dataset
+- **Overall attrition rate: ~16%**, highest in **Sales and R&D**
+- **SHAP analysis identified the top 5 attrition drivers:** Overtime, Business Travel, Job Role, Environment Satisfaction, and Years Since Last Promotion
+- Employees with **low satisfaction + high overtime** showed the highest attrition risk
+- **Younger employees and those with fewer years of service** were disproportionately likely to leave
 
 ---
 
-##  Future Scope
+## Methodology
 
-- Apply methodology to real organizational HR data.  
-- Add behavioral and performance metrics.  
-- Perform hyperparameter tuning for ensemble models.  
-- Deploy predictive dashboards for real‑time HR monitoring.  
+**Data Preprocessing:**
+- Removed redundant columns (`EmployeeCount`, `EmployeeNumber`, `Over18`, `StandardHours`)
+- One-hot encoded categorical variables (`BusinessTravel`, `Department`, `EducationField`, `JobRole`, `MaritalStatus`)
+- Standardized numerical features using `StandardScaler`
+- 80/20 train-test split
+
+**Models tested:** Logistic Regression, Decision Tree, Random Forest, XGBoost
+**Explainability:** SHAP values used to interpret which features drove individual and overall predictions, not just to optimize accuracy
+
+**Outputs:**
+- SQL queries for descriptive analysis
+- Power BI dashboard for visualization
+- Python notebook for predictive modeling
+- Predicted CSV (`Predicted_Attrition` = 0/1, `Attrition_Probability`, human-readable `Prediction` label)
+
+---
+
+## Recommendations
+
+- Introduce flexible work policies to reduce overtime-driven attrition
+- Build structured, predictable promotion timelines
+- Strengthen engagement programs in Sales and R&D specifically
+- Review business travel frequency for high-risk roles
+
+---
+
+## Limitations
+
+- Dataset is synthetic (IBM sample data), not real organizational data
+- External factors (market conditions, compensation benchmarking) not included
+- Logistic Regression assumes linear relationships between features and outcome
+
+---
+
+## Future Scope
+
+- Apply this methodology to real organizational HR data
+- Incorporate behavioral and performance metrics
+- Hyperparameter tuning for ensemble models (Random Forest, XGBoost)
+- Deploy as a live, real-time HR monitoring dashboard
+
+---
+
+**Author:** Jahnavi Jammi
+Aspiring Data Analyst | SQL · Python · Power BI · Machine Learning
