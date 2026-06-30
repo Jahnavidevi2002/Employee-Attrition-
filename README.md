@@ -23,12 +23,6 @@ The analysis integrates:
 - **Python (scikit‑learn, XGBoost, SHAP)** → for predictive modeling and explainability.  
 
 ---
-## 🛠 Tech Stack
-- **SQL** → Descriptive analysis and queries  
-- **Power BI** → Interactive dashboards and visualization  
-- **Python (scikit-learn, XGBoost, SHAP)** → Predictive modeling and explainability  
-- **Google Colab** → Notebook environment for running Python code  
-
 
 ## Key Details
 
