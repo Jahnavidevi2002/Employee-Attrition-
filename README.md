@@ -1,4 +1,9 @@
 # Employee-Attrition-
+![Python](https://img.shields.io/badge/Python-3.9-green?logo=python)
+![SQL](https://img.shields.io/badge/SQL-Analysis-blue?logo=postgresql)
+![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-yellow?logo=powerbi)
+![GoogleColab](https://img.shields.io/badge/GoogleColab-Notebook-orange?logo=googlecolab)
+
 ##  Repository Structure
 
 ├── WA_Fn-UseC_-HR-Employee-Attrition/           # Original dataset  
